@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Route - Weather-Based Travel Alerts</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps.css" />
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="background-animation"></div>
+  <div class="container">
+    <h1>Safe Route</h1>
+    <p>Enter your start and destination to get weather-based travel alerts.</p>
+    
+    <form id="routeForm">
+      <label for="start">Start Location:</label>
+      <input type="text" id="start" placeholder="Enter start location" required>
+      
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" placeholder="Enter destination" required>
+      
+      <button type="submit">Get Route</button>
+      <button type="button" id="clearRoute">Clear Route</button>
+    </form>
+
+    <div id="loading" class="loading-spinner"></div>
+
+    <div id="weatherAlert" class="alert">
+      <i id="weatherIcon" class="fas fa-sun"></i>
+      <span id="weatherMessage"></span>
+    </div>
+
+    <div id="routeInfo" class="route-info">
+      <p><strong>Distance:</strong> <span id="distance">-</span></p>
+      <p><strong>Travel Time:</strong> <span id="travelTime">-</span></p>
+      <p><strong>Traffic Info:</strong> <span id="trafficInfo">-</span></p>
+    </div>
+
+    <div id="map" class="map"></div>
+
+    <div class="search-history">
+      <h3>Search History</h3>
+      <ul id="historyList"></ul>
+      <button id="deleteHistory">Delete History</button>
+    </div>
+
+    <div class="map-controls">
+      <button id="zoomIn">+</button>
+      <button id="zoomOut">-</button>
+    </div>
+
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

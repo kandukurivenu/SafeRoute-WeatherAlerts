@@ -1,0 +1,236 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+input {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#clearRoute {
+  background-color: #dc3545;
+}
+
+#clearRoute:hover {
+  background-color: #c82333;
+}
+
+#deleteHistory {
+  margin-top: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#deleteHistory:hover {
+  background-color: #c82333;
+}
+
+.loading-spinner {
+  display: none;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #28a745;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.alert {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 6px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alert.warning {
+  background-color: #ffcc00;
+  color: #000;
+}
+
+.alert.danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.route-info {
+  margin-top: 20px;
+  text-align: left;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.map-controls button {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-history {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.search-history ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.search-history li {
+  padding: 5px 0;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.search-history li:hover {
+  text-decoration: underline;
+}
+
+#darkModeToggle {
+  margin-top: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .container {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode input,
+body.dark-mode button {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
